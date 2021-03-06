@@ -8,5 +8,10 @@ namespace Skapiec_APP
 {
     class SqliteDataAccess
     {
+        /*
+        Lista obecności
+        Antoni Kopeć
+
+         */
     }
 }
