@@ -13,6 +13,7 @@ namespace Skapiec_APP
         Antoni Kopeć
         Szymon Szymalski
         Dominik Witek
+        Krzysztof Gorowicz
          */
     }
 }
