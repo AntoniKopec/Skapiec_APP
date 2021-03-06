@@ -12,6 +12,7 @@ namespace Skapiec_APP
         Lista obecności
         Antoni Kopeć
 
+        Dominik Witek
          */
     }
 }
