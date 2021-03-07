@@ -15,27 +15,19 @@ namespace Skapiec_APP
 {
     public partial class Form1 : Form
     {
-        List<SearchModel> search = new List<SearchModel>();
+        public class Skapiec
+        {
+            public string historia { get; set; }
+        }
+
+        private static string LoadConnetionString(string id = "Default")
+        {
+            return ConfigurationManager.ConnectionStrings[id].ConnectionString;
+        }
 
         public Form1()
         {
             InitializeComponent();
-
-            LoadSearchList();
-        }
-
-        private void LoadSearchList()
-        {
-            search = SqliteDataAccess.LoadSearch();
-
-            WireUpSearchList();
-        }
-
-        private void WireUpSearchList()
-        {
-            comboBox1.DataSource = null;
-            comboBox1.DataSource = search;
-            comboBox1.DisplayMember = "SearchCombo";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -50,18 +42,15 @@ namespace Skapiec_APP
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SearchModel s = new SearchModel();
 
-            s.SearchQuery = textBox1.Text;
-
-            SqliteDataAccess.SaveSearch(s);
-
-            textBox1.Text = ""; 
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnetionString()))
+            {
+                cnn.Execute("select * from Search");
+            }
          
            
         }
