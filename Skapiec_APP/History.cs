@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Skapiec_APP
 {
-    public partial class Form2 : Form
+    public partial class History : Form
     {
-        public Form2()
+        public History()
         {
             InitializeComponent();
         }

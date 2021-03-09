@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skapiec_APP", "Skapiec_APP\Skapiec_APP.csproj", "{66DB111D-1556-4A8D-9959-5FCF58B6A7B7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skapiec_APP", "Skapiec_APP\Skapiec_APP.csproj", "{B7D680B7-7800-4D33-8403-ED4F52DE651B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{66DB111D-1556-4A8D-9959-5FCF58B6A7B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{66DB111D-1556-4A8D-9959-5FCF58B6A7B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{66DB111D-1556-4A8D-9959-5FCF58B6A7B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{66DB111D-1556-4A8D-9959-5FCF58B6A7B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7D680B7-7800-4D33-8403-ED4F52DE651B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7D680B7-7800-4D33-8403-ED4F52DE651B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7D680B7-7800-4D33-8403-ED4F52DE651B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7D680B7-7800-4D33-8403-ED4F52DE651B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {34A3CB7D-15F3-4E88-AE66-9391941CE2D7}
+		SolutionGuid = {9DF50671-A165-4AA4-97D7-58887326BAB5}
 	EndGlobalSection
 EndGlobal
