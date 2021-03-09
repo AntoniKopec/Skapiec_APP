@@ -15,29 +15,34 @@ namespace Skapiec_APP
 {
     public partial class Home : Form
     {
-        //wczytanie danych z bazy 
-        private static string LoadConnetionString(string id = "Default")
-        {
-            return ConfigurationManager.ConnectionStrings[id].ConnectionString;
-        }
-        private void Odswiez()
-        {
-            using (IDbConnection cnn = new SQLiteConnection(LoadConnetionString()))
-            {
-                var output = cnn.Query("select search_query from search", new DynamicParameters());
-
-                search.Text = output.ToString();
-            }
-        }
-
+        List<SearchModel> people = new List<SearchModel>();
 
         public Home()
         {
             InitializeComponent();
-            Odswiez();
+            LoadPeopleList();
         }
 
+        private void LoadPeopleList()
+        {
+            people = SqliteDataAccess.LoadPeople();                      
+            WireUpPeopleList();
+        }
+
+        private void WireUpPeopleList()
+        {
+            test.DataSource = null;
+            test.DataSource = people;
+            test.DisplayMember = "search_query";
+        }
+
+
         private void search_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void test_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
