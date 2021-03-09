@@ -15,15 +15,7 @@ namespace Skapiec_APP
 {
     public partial class Form1 : Form
     {
-        public class Skapiec
-        {
-            public string historia { get; set; }
-        }
-
-        private static string LoadConnetionString(string id = "Default")
-        {
-            return ConfigurationManager.ConnectionStrings[id].ConnectionString;
-        }
+             
 
         public Form1()
         {
@@ -45,19 +37,21 @@ namespace Skapiec_APP
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            using (IDbConnection cnn = new SQLiteConnection(LoadConnetionString()))
-            {
-                cnn.Execute("select * from Search");
-            }
-         
-           
+
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
