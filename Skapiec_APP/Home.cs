@@ -16,20 +16,21 @@ namespace Skapiec_APP
     public partial class Home : Form
     {
         List<SearchModel> people = new List<SearchModel>();
+       
 
         public Home()
         {
             InitializeComponent();
-            LoadPeopleList();
+            LoadSearchList();
         }
 
-        private void LoadPeopleList()
+        private void LoadSearchList()
         {
-            people = SqliteDataAccess.LoadPeople();                      
-            WireUpPeopleList();
+            people = SqliteDataAccess.LoadSearch();
+            WireUpSearchList();
         }
 
-        private void WireUpPeopleList()
+        private void WireUpSearchList()
         {
             test.DataSource = null;
             test.DataSource = people;

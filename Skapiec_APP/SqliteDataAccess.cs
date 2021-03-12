@@ -36,7 +36,7 @@ namespace Skapiec_APP
         }
 
 
-        public static List<SearchModel> LoadPeople()
+        public static List<SearchModel> LoadSearch()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
@@ -44,6 +44,15 @@ namespace Skapiec_APP
                 return output.ToList();
             }
         }
-        
+
+        public static List<PeroductsModel> LoadProducts()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = cnn.Query<PeroductsModel>("select * from products", new DynamicParameters());
+                return output.ToList();
+            }
+        }
+
     }
 }

@@ -12,6 +12,7 @@ namespace Skapiec_APP
 {
     public partial class History : Form
     {
+        List<PeroductsModel> products = new List<PeroductsModel>();
         public History()
         {
             InitializeComponent();
