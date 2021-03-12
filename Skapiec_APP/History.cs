@@ -16,5 +16,15 @@ namespace Skapiec_APP
         {
             InitializeComponent();
         }
+
+        private void History_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void history_panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

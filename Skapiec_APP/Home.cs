@@ -46,5 +46,12 @@ namespace Skapiec_APP
         {
 
         }
+
+        private void history_btn_Click(object sender, EventArgs e)
+        {
+            History history = new History();
+            history.Show();
+            this.Hide();
+        }
     }
 }

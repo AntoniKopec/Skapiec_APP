@@ -32,11 +32,12 @@
             this.search = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.test = new System.Windows.Forms.ListBox();
+            this.history_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // search
             // 
-            this.search.Location = new System.Drawing.Point(134, 64);
+            this.search.Location = new System.Drawing.Point(55, 54);
             this.search.Multiline = true;
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(212, 46);
@@ -52,17 +53,28 @@
             // test
             // 
             this.test.FormattingEnabled = true;
-            this.test.Location = new System.Drawing.Point(425, 86);
+            this.test.Location = new System.Drawing.Point(468, 119);
             this.test.Name = "test";
             this.test.Size = new System.Drawing.Size(120, 95);
             this.test.TabIndex = 1;
             this.test.SelectedIndexChanged += new System.EventHandler(this.test_SelectedIndexChanged);
+            // 
+            // history_btn
+            // 
+            this.history_btn.Location = new System.Drawing.Point(534, 54);
+            this.history_btn.Name = "history_btn";
+            this.history_btn.Size = new System.Drawing.Size(75, 23);
+            this.history_btn.TabIndex = 2;
+            this.history_btn.Text = "Historia";
+            this.history_btn.UseVisualStyleBackColor = true;
+            this.history_btn.Click += new System.EventHandler(this.history_btn_Click);
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 661);
+            this.Controls.Add(this.history_btn);
             this.Controls.Add(this.test);
             this.Controls.Add(this.search);
             this.MaximumSize = new System.Drawing.Size(1000, 700);
@@ -80,6 +92,7 @@
         private System.Windows.Forms.TextBox search;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ListBox test;
+        private System.Windows.Forms.Button history_btn;
     }
 }
 
