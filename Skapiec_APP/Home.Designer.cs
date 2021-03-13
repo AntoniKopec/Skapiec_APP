@@ -34,15 +34,16 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.search_btn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // search
             // 
-            this.search.Location = new System.Drawing.Point(139, 12);
+            this.search.Location = new System.Drawing.Point(256, 12);
             this.search.Multiline = true;
             this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(212, 46);
+            this.search.Size = new System.Drawing.Size(470, 46);
             this.search.TabIndex = 0;
             this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
             // 
@@ -57,9 +58,9 @@
             // 
             // history_btn
             // 
-            this.history_btn.Location = new System.Drawing.Point(655, 23);
+            this.history_btn.Location = new System.Drawing.Point(766, 23);
             this.history_btn.Name = "history_btn";
-            this.history_btn.Size = new System.Drawing.Size(75, 23);
+            this.history_btn.Size = new System.Drawing.Size(85, 24);
             this.history_btn.TabIndex = 2;
             this.history_btn.Text = "Historia";
             this.history_btn.UseVisualStyleBackColor = true;
@@ -76,6 +77,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(33)))), ((int)(((byte)(66)))));
+            this.panel1.Controls.Add(this.search_btn);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.history_btn);
             this.panel1.Controls.Add(this.search);
@@ -87,11 +89,24 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = global::Skapiec_APP.Properties.Resources.skapiec_logo1;
+            this.panel2.Location = new System.Drawing.Point(12, 14);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(130, 62);
+            this.panel2.Size = new System.Drawing.Size(163, 42);
             this.panel2.TabIndex = 3;
+            // 
+            // search_btn
+            // 
+            this.search_btn.BackColor = System.Drawing.Color.Transparent;
+            this.search_btn.BackgroundImage = global::Skapiec_APP.Properties.Resources.search;
+            this.search_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.search_btn.FlatAppearance.BorderSize = 0;
+            this.search_btn.Location = new System.Drawing.Point(678, 11);
+            this.search_btn.Name = "search_btn";
+            this.search_btn.Size = new System.Drawing.Size(48, 48);
+            this.search_btn.TabIndex = 4;
+            this.search_btn.UseVisualStyleBackColor = false;
             // 
             // Home
             // 
@@ -120,6 +135,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button search_btn;
     }
 }
 
