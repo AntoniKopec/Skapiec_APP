@@ -33,11 +33,13 @@
             // 
             // history_panel
             // 
-            this.history_panel.Location = new System.Drawing.Point(61, 118);
+            this.history_panel.AutoScroll = true;
+            this.history_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.history_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.history_panel.Location = new System.Drawing.Point(0, 127);
             this.history_panel.Name = "history_panel";
-            this.history_panel.Size = new System.Drawing.Size(750, 327);
+            this.history_panel.Size = new System.Drawing.Size(984, 534);
             this.history_panel.TabIndex = 0;
-            this.history_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.history_panel_Paint);
             // 
             // History
             // 

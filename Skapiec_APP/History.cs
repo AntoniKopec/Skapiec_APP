@@ -20,12 +20,30 @@ namespace Skapiec_APP
 
         private void History_Load(object sender, EventArgs e)
         {
-
+            populateItems();
         }
 
-        private void history_panel_Paint(object sender, PaintEventArgs e)
+        private void populateItems()
         {
+            //wypełnienie
+            HistoryItem[] listItems = new HistoryItem[20];
 
+            for (int i = 0; i < listItems.Length; i++)
+            {
+                listItems[i] = new HistoryItem();
+                
+                listItems[i].Title = "weź dane z skądś";
+
+                // dodawnie do flow layout panelu 
+                if (history_panel.Controls.Count < 0)
+                {
+                    history_panel.Controls.Clear();
+                }
+                else
+                    history_panel.Controls.Add(listItems[i]);
+            }
         }
+
+       
     }
 }
