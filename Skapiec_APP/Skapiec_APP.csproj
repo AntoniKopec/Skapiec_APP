@@ -76,6 +76,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqliteDataAccess.cs" />
+    <None Include="Resources\historia.png" />
     <None Include="Resources\search.png" />
     <None Include="Resources\skapiec_logo.png" />
     <None Include="Resources\skapiec_logo.jpg" />
