@@ -17,7 +17,7 @@ namespace Skapiec_APP
        
     }
 
-    public class PeroductsModel
+    public class ProductsModel
     {
         public int ID { get; set; }
         public int search_query { get; set; }
@@ -45,11 +45,11 @@ namespace Skapiec_APP
             }
         }
 
-        public static List<PeroductsModel> LoadProducts()
+        public static List<ProductsModel> LoadProducts()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<PeroductsModel>("select * from products", new DynamicParameters());
+                var output = cnn.Query<ProductsModel>("select * from products", new DynamicParameters());
                 return output.ToList();
             }
         }
