@@ -44,6 +44,12 @@ namespace Skapiec_APP
             }
         }
 
-       
+        private void search_btn_Click(object sender, EventArgs e)
+        {
+            Home home = new Home();
+            home.Show();
+            this.Close();
+        }
+
     }
 }

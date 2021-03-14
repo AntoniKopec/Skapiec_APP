@@ -40,27 +40,31 @@
             // 
             // search
             // 
-            this.search.Location = new System.Drawing.Point(256, 12);
+            this.search.Location = new System.Drawing.Point(341, 15);
+            this.search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.search.Multiline = true;
             this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(470, 46);
+            this.search.Size = new System.Drawing.Size(625, 56);
             this.search.TabIndex = 0;
             this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
             // 
             // test
             // 
             this.test.FormattingEnabled = true;
-            this.test.Location = new System.Drawing.Point(361, 76);
+            this.test.ItemHeight = 16;
+            this.test.Location = new System.Drawing.Point(481, 94);
+            this.test.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.test.Name = "test";
-            this.test.Size = new System.Drawing.Size(120, 95);
+            this.test.Size = new System.Drawing.Size(159, 116);
             this.test.TabIndex = 1;
             this.test.SelectedIndexChanged += new System.EventHandler(this.test_SelectedIndexChanged);
             // 
             // history_btn
             // 
-            this.history_btn.Location = new System.Drawing.Point(766, 23);
+            this.history_btn.Location = new System.Drawing.Point(1021, 28);
+            this.history_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.history_btn.Name = "history_btn";
-            this.history_btn.Size = new System.Drawing.Size(85, 24);
+            this.history_btn.Size = new System.Drawing.Size(113, 30);
             this.history_btn.TabIndex = 2;
             this.history_btn.Text = "Historia";
             this.history_btn.UseVisualStyleBackColor = true;
@@ -75,8 +79,9 @@
             this.panel1.Controls.Add(this.search);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(984, 68);
+            this.panel1.Size = new System.Drawing.Size(1309, 84);
             this.panel1.TabIndex = 4;
             // 
             // search_btn
@@ -85,9 +90,10 @@
             this.search_btn.BackgroundImage = global::Skapiec_APP.Properties.Resources.search;
             this.search_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.search_btn.FlatAppearance.BorderSize = 0;
-            this.search_btn.Location = new System.Drawing.Point(678, 11);
+            this.search_btn.Location = new System.Drawing.Point(904, 14);
+            this.search_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.search_btn.Name = "search_btn";
-            this.search_btn.Size = new System.Drawing.Size(48, 48);
+            this.search_btn.Size = new System.Drawing.Size(64, 59);
             this.search_btn.TabIndex = 4;
             this.search_btn.UseVisualStyleBackColor = false;
             // 
@@ -95,9 +101,10 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BackgroundImage = global::Skapiec_APP.Properties.Resources.skapiec_logo1;
-            this.panel2.Location = new System.Drawing.Point(12, 14);
+            this.panel2.Location = new System.Drawing.Point(16, 17);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(163, 42);
+            this.panel2.Size = new System.Drawing.Size(217, 52);
             this.panel2.TabIndex = 3;
             // 
             // home_panel
@@ -105,21 +112,24 @@
             this.home_panel.AutoScroll = true;
             this.home_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.home_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.home_panel.Location = new System.Drawing.Point(0, 190);
+            this.home_panel.Location = new System.Drawing.Point(0, 224);
+            this.home_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.home_panel.Name = "home_panel";
-            this.home_panel.Size = new System.Drawing.Size(984, 471);
+            this.home_panel.Size = new System.Drawing.Size(1309, 580);
             this.home_panel.TabIndex = 5;
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 661);
+            this.ClientSize = new System.Drawing.Size(1309, 804);
             this.Controls.Add(this.home_panel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.test);
-            this.MaximumSize = new System.Drawing.Size(1000, 700);
-            this.MinimumSize = new System.Drawing.Size(1000, 700);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1327, 851);
+            this.MinimumSize = new System.Drawing.Size(1327, 851);
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
