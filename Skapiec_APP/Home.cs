@@ -22,7 +22,32 @@ namespace Skapiec_APP
         {
             InitializeComponent();
             LoadSearchList();
+            populateItems();
         }
+
+        private void populateItems()
+        {
+            //wypełnienie
+            HomeItem[] listItems = new HomeItem[20];
+
+            for (int i = 0; i < listItems.Length; i++)
+            {
+                listItems[i] = new HomeItem();
+
+                listItems[i].Title = "weź dane z skądś";
+                
+                listItems[i].Price = "weź cene z skądś";
+
+                // dodawnie do flow layout panelu 
+                if (home_panel.Controls.Count < 0)
+                {
+                    home_panel.Controls.Clear();
+                }
+                else
+                    home_panel.Controls.Add(listItems[i]);
+            }
+        }
+
 
         private void LoadSearchList()
         {
