@@ -32,7 +32,7 @@ namespace Skapiec_APP
             {
                 listItems[i] = new HistoryItem();
                 
-                listItems[i].Title = "weź dane z skądś";
+                listItems[i].Title = "weź tytuł";
 
                 // dodawnie do flow layout panelu 
                 if (history_panel.Controls.Count < 0)

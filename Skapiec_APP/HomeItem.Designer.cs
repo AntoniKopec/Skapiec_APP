@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeItem));
             this.home_picture = new System.Windows.Forms.PictureBox();
             this.home_title_label = new System.Windows.Forms.Label();
             this.price_label = new System.Windows.Forms.Label();
@@ -37,6 +38,8 @@
             // 
             // home_picture
             // 
+            this.home_picture.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("home_picture.BackgroundImage")));
+            this.home_picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.home_picture.Location = new System.Drawing.Point(47, 15);
             this.home_picture.Name = "home_picture";
             this.home_picture.Size = new System.Drawing.Size(140, 154);
@@ -80,7 +83,7 @@
             this.Controls.Add(this.price_label);
             this.Controls.Add(this.home_title_label);
             this.Controls.Add(this.home_picture);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HomeItem";
             this.Size = new System.Drawing.Size(235, 294);
             ((System.ComponentModel.ISupportInitialize)(this.home_picture)).EndInit();

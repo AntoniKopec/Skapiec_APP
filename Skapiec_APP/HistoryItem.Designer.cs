@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryItem));
             this.title_label = new System.Windows.Forms.Label();
             this.history_picture = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -46,6 +47,8 @@
             // 
             // history_picture
             // 
+            this.history_picture.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("history_picture.BackgroundImage")));
+            this.history_picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.history_picture.Location = new System.Drawing.Point(47, 15);
             this.history_picture.Name = "history_picture";
             this.history_picture.Size = new System.Drawing.Size(140, 154);

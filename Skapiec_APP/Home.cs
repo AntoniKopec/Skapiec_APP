@@ -34,9 +34,9 @@ namespace Skapiec_APP
             {
                 listItems[i] = new HomeItem();
 
-                listItems[i].Title = "weź dane z skądś";
+                listItems[i].Title = "weź tytuł";
                 
-                listItems[i].Price = "weź cene z skądś";
+                listItems[i].Price = "weź cene";
 
                 // dodawnie do flow layout panelu 
                 if (home_panel.Controls.Count < 0)
