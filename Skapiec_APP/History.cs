@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
+using Dapper;
 
 namespace Skapiec_APP
 {
@@ -25,14 +27,30 @@ namespace Skapiec_APP
 
         private void populateItems()
         {
+            /*private void LoadSearchList()
+            {
+                people = SqliteDataAccess.LoadSearch();
+                WireUpSearchList();
+            }
+
+            private void WireUpSearchList()
+            {
+                test.DataSource = null;
+                test.DataSource = people;
+                test.DisplayMember = "search_query";
+            }          
+             */
+
+            List<sName> Name = new List<sName>();
+            //List<string> prName = new List<string> { "deska0-", "deska1-", "deska2-", "deska3-", "deska4-", "deska5-", "deska6-", "deska7-" };
             //wypełnienie
-            HistoryItem[] listItems = new HistoryItem[20];
+            HistoryItem[] listItems = new HistoryItem[2];
 
             for (int i = 0; i < listItems.Length; i++)
             {
                 listItems[i] = new HistoryItem();
                 
-                listItems[i].Title = "Tytuł";
+                listItems[i].Title = Name[i];
 
                 // dodawnie do flow layout panelu 
                 if (history_panel.Controls.Count < 0)

@@ -17,6 +17,11 @@ namespace Skapiec_APP
        
     }
 
+    public class sName
+    {
+        public string search_query { get; set; }
+    }
+
     public class ProductsModel
     {
         public int ID { get; set; }
@@ -41,6 +46,15 @@ namespace Skapiec_APP
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
                 var output = cnn.Query<SearchModel>("select * from search", new DynamicParameters());
+                return output.ToList();
+            }
+        }
+
+        public static List<sName> sName()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = cnn.Query<sName>("select search_query from search", new DynamicParameters());
                 return output.ToList();
             }
         }
