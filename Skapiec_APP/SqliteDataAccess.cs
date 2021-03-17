@@ -13,14 +13,9 @@ namespace Skapiec_APP
     public class SearchModel
     {
         public int ID { get; set; }
-        public string search_query { get; set; }
-       
+        public string search_query { get; set; }      
     }
 
-    public class sName
-    {
-        public string search_query2 { get; set; }
-    }
 
     public class ProductsModel
     {
@@ -28,7 +23,7 @@ namespace Skapiec_APP
         public int search_query { get; set; }
         public string image { get; set; }
         public string title { get; set; }
-        public bool price { get; set; }
+        public string price { get; set; }
     }
 
 
@@ -50,15 +45,7 @@ namespace Skapiec_APP
             }
         }
 
-        //public static List<sName> LoadSearchQuery()
-        //{
-        //    using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
-        //    {
-        //        var output = cnn.Query<sName>("select search_query from search", new DynamicParameters());
-        //        return output.ToList();
-        //    }
-        //}
-
+        
         public static List<ProductsModel> LoadProducts()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
