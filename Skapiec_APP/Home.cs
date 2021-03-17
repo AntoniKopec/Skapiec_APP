@@ -15,8 +15,8 @@ namespace Skapiec_APP
 {
     public partial class Home : Form
     {
-        List<SearchModel> people = new List<SearchModel>();
-       
+        List<SearchModel> Search = new List<SearchModel>();
+
 
         public Home()
         {
@@ -28,15 +28,15 @@ namespace Skapiec_APP
         private void populateItems()
         {
             //wypełnienie
-            HomeItem[] listItems = new HomeItem[20];
+            HomeItem[] listItems = new HomeItem[2];
 
             for (int i = 0; i < listItems.Length; i++)
             {
                 listItems[i] = new HomeItem();
 
-                listItems[i].Title = "weź tytuł";
+                listItems[i].Title = Search[i].search_query;
                 
-                listItems[i].Price = "weź cene";
+                listItems[i].Price = "Price";
 
                 // dodawnie do flow layout panelu 
                 if (home_panel.Controls.Count < 0)
@@ -51,14 +51,14 @@ namespace Skapiec_APP
 
         private void LoadSearchList()
         {
-            people = SqliteDataAccess.LoadSearch();
+            Search = SqliteDataAccess.LoadSearch();
             WireUpSearchList();
         }
 
         private void WireUpSearchList()
         {
             test.DataSource = null;
-            test.DataSource = people;
+            test.DataSource = Search;
             test.DisplayMember = "search_query";
         }
 

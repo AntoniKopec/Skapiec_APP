@@ -15,7 +15,7 @@ namespace Skapiec_APP
     public partial class History : Form
     {
         List<ProductsModel> products = new List<ProductsModel>();
-        List<SearchModel> people = new List<SearchModel>();
+     
         List<sName> query = new List<sName>();
 
         public History()

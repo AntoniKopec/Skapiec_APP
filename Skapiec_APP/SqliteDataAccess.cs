@@ -50,14 +50,14 @@ namespace Skapiec_APP
             }
         }
 
-        public static List<sName> LoadSearchQuery()
-        {
-            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
-            {
-                var output = cnn.Query<sName>("select search_query from search", new DynamicParameters());
-                return output.ToList();
-            }
-        }
+        //public static List<sName> LoadSearchQuery()
+        //{
+        //    using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+        //    {
+        //        var output = cnn.Query<sName>("select search_query from search", new DynamicParameters());
+        //        return output.ToList();
+        //    }
+        //}
 
         public static List<ProductsModel> LoadProducts()
         {
