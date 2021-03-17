@@ -15,6 +15,9 @@ namespace Skapiec_APP
     public partial class History : Form
     {
         List<ProductsModel> products = new List<ProductsModel>();
+        List<SearchModel> people = new List<SearchModel>();
+        List<sName> query = new List<sName>();
+
         public History()
         {
             InitializeComponent();
@@ -25,32 +28,19 @@ namespace Skapiec_APP
             populateItems();
         }
 
+
         private void populateItems()
         {
-            /*private void LoadSearchList()
-            {
-                people = SqliteDataAccess.LoadSearch();
-                WireUpSearchList();
-            }
+            //List<string> Search = new List<string> {"deska0-", "deska1-", "deska2-", "deska3-", "deska4-", "deska5-", "deska6-", "deska7-"};            
+            //wypełnienie                   
+            List<SearchModel> Search = new List<SearchModel>();
 
-            private void WireUpSearchList()
-            {
-                test.DataSource = null;
-                test.DataSource = people;
-                test.DisplayMember = "search_query";
-            }          
-             */
-
-            List<sName> Name = new List<sName>();
-            //List<string> prName = new List<string> { "deska0-", "deska1-", "deska2-", "deska3-", "deska4-", "deska5-", "deska6-", "deska7-" };
-            //wypełnienie
-            HistoryItem[] listItems = new HistoryItem[2];
-
+            HistoryItem[] listItems = new HistoryItem[1];
             for (int i = 0; i < listItems.Length; i++)
             {
                 listItems[i] = new HistoryItem();
                 
-                listItems[i].Title = Name[i];
+                listItems[i].Title = Search[i].search_query;
 
                 // dodawnie do flow layout panelu 
                 if (history_panel.Controls.Count < 0)

@@ -20,14 +20,14 @@ namespace Skapiec_APP
 
         #region Properties
 
-        private string _title;
+        private string _title; //= SqliteDataAccess.sName();
         private Image _icon;
 
         [Category("Custom Props")]
         public string Title
         {
             get { return _title; }
-            set { _title = value; title_label.Text = value; }
+            set { _title = value; title_label.Text = value; }         
         }
 
 

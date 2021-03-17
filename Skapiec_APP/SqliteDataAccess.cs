@@ -19,7 +19,7 @@ namespace Skapiec_APP
 
     public class sName
     {
-        public string search_query { get; set; }
+        public string search_query2 { get; set; }
     }
 
     public class ProductsModel
@@ -50,7 +50,7 @@ namespace Skapiec_APP
             }
         }
 
-        public static List<sName> sName()
+        public static List<sName> LoadSearchQuery()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
