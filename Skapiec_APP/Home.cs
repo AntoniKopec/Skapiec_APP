@@ -15,12 +15,13 @@ namespace Skapiec_APP
 {
     public partial class Home : Form
     {
+        List<ProductsModel> Product = new List<ProductsModel>();
         List<SearchModel> Search = new List<SearchModel>();
-
 
         public Home()
         {
             InitializeComponent();
+            LoadProductsList();
             LoadSearchList();
             populateItems();
         }
@@ -34,9 +35,11 @@ namespace Skapiec_APP
             {
                 listItems[i] = new HomeItem();
 
-                listItems[i].Title = Search[i].search_query;
+                listItems[i].Title = Product[i].title;
                 
-                listItems[i].Price = "Price";
+                listItems[i].Price = Product[i].price;
+
+                //listItems[i].Icon = Product[i].image;
 
                 // dodawnie do flow layout panelu 
                 if (home_panel.Controls.Count < 0)
@@ -48,6 +51,11 @@ namespace Skapiec_APP
             }
         }
 
+
+        private void LoadProductsList()
+        {
+            Product = SqliteDataAccess.LoadProducts();            
+        }    
 
         private void LoadSearchList()
         {
@@ -61,7 +69,6 @@ namespace Skapiec_APP
             test.DataSource = Search;
             test.DisplayMember = "search_query";
         }
-
 
         private void search_TextChanged(object sender, EventArgs e)
         {

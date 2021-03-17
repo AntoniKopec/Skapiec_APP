@@ -15,24 +15,27 @@ namespace Skapiec_APP
 {
     public partial class History : Form
     {
-        List<SearchModel> Search = new List<SearchModel>();
-        //List<sName> query = new List<sName>();
+        List<SearchModel> Search = new List<SearchModel>();        
 
         public History()
         {
             InitializeComponent();
-            populateItems();
+            LoadSearchList();
+            populateItems();            
         }
 
         private void History_Load(object sender, EventArgs e)
         {
-            populateItems();
+            
+        }
+        
+        private void LoadSearchList()
+        {
+            Search = SqliteDataAccess.LoadSearch();            
         }
 
-
         private void populateItems()
-        {
-            //List<string> Search = new List<string> {"deska0-", "deska1-", "deska2-", "deska3-", "deska4-", "deska5-", "deska6-", "deska7-"};            
+        {                       
             //wypełnienie                   
            
             HistoryItem[] listItems = new HistoryItem[2];
