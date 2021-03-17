@@ -16,19 +16,24 @@ namespace Skapiec_APP
     public partial class History : Form
     {
         List<SearchModel> Search = new List<SearchModel>();
-        //List<sName> query = new List<sName>();
+ 
 
         public History()
         {
             InitializeComponent();
+            LoadSearchList();
             populateItems();
         }
 
         private void History_Load(object sender, EventArgs e)
         {
-            populateItems();
+            
         }
 
+        private void LoadSearchList()
+        {
+            Search = SqliteDataAccess.LoadSearch();
+        }
 
         private void populateItems()
         {
