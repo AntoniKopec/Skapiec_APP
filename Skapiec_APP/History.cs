@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 using System.Data.SQLite;
 using Dapper;
 
@@ -14,13 +15,13 @@ namespace Skapiec_APP
 {
     public partial class History : Form
     {
-        List<ProductsModel> products = new List<ProductsModel>();
-     
-        List<sName> query = new List<sName>();
+        List<SearchModel> Search = new List<SearchModel>();
+        //List<sName> query = new List<sName>();
 
         public History()
         {
             InitializeComponent();
+            populateItems();
         }
 
         private void History_Load(object sender, EventArgs e)
@@ -33,9 +34,9 @@ namespace Skapiec_APP
         {
             //List<string> Search = new List<string> {"deska0-", "deska1-", "deska2-", "deska3-", "deska4-", "deska5-", "deska6-", "deska7-"};            
             //wypełnienie                   
-            List<SearchModel> Search = new List<SearchModel>();
+           
+            HistoryItem[] listItems = new HistoryItem[2];
 
-            HistoryItem[] listItems = new HistoryItem[1];
             for (int i = 0; i < listItems.Length; i++)
             {
                 listItems[i] = new HistoryItem();
