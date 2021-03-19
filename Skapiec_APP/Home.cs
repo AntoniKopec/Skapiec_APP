@@ -24,6 +24,7 @@ namespace Skapiec_APP
             LoadProductsList();
             LoadSearchList();
             populateItems();
+            //LoadImage();
         }
 
         private void populateItems()
@@ -39,7 +40,7 @@ namespace Skapiec_APP
                 
                 listItems[i].Price = Product[i].price;
 
-                //listItems[i].Icon = Product[i].image;
+                listItems[i].Icon = Properties.Resources.search;     
 
                 // dodawnie do flow layout panelu 
                 if (home_panel.Controls.Count < 0)
@@ -50,7 +51,10 @@ namespace Skapiec_APP
                     home_panel.Controls.Add(listItems[i]);
             }
         }
-
+        /*private void LoadImage()
+        {
+            Img = SqliteDataAccess.LoadProducts();            
+        }*/
 
         private void LoadProductsList()
         {

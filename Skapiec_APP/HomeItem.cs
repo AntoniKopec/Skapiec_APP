@@ -21,7 +21,7 @@ namespace Skapiec_APP
 
         private string _title;
         private string _price;
-        private Image _icon;
+        private Image _icon;       
 
         [Category("Custom Props")]
         public string Title
@@ -36,7 +36,6 @@ namespace Skapiec_APP
             get { return _price; }
             set { _price = value; price_label.Text = value; }
         }
-
 
         [Category("Custom Props")]
         public Image Icon

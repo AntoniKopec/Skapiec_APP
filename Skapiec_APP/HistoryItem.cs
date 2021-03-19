@@ -20,7 +20,7 @@ namespace Skapiec_APP
 
         #region Properties
 
-        private string _title; //= SqliteDataAccess.sName();
+        private string _title;
         private Image _icon;
 
         [Category("Custom Props")]
