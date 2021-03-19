@@ -39,7 +39,9 @@ namespace Skapiec_APP
                 
                 listItems[i].Price = Product[i].price;
 
-                listItems[i].Icon = Image.FromFile(@"C:\Users\domin\Documents\Studia\Zespołowy Projekt Programistyczny\Skapiec_APP\img\" + Product[i].title + ".jpg");
+                //listItems[i].Icon = Image.FromFile(@"C:\Users\domin\Documents\Studia\Zespołowy Projekt Programistyczny\Skapiec_APP\img\" + Product[i].title + ".jpg");
+                
+                listItems[i].Icon = Image.FromFile(@"C:\Users\domin\Documents\Studia\Zespołowy Projekt Programistyczny\" + Product[i].image);
                 //każdy niech daje swoją ścieżkę żeby spawdzać czy działa                
                 //wygląda na to że tytuły zdjęć muszą być takie jak tytuły ofert   
 
