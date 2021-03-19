@@ -16,15 +16,14 @@ namespace Skapiec_APP
     public partial class Home : Form
     {
         List<ProductsModel> Product = new List<ProductsModel>();
-        List<SearchModel> Search = new List<SearchModel>();
+        List<SearchModel> Search = new List<SearchModel>();       
 
         public Home()
         {
             InitializeComponent();
             LoadProductsList();
             LoadSearchList();
-            populateItems();
-            //LoadImage();
+            populateItems();            
         }
 
         private void populateItems()
@@ -40,7 +39,9 @@ namespace Skapiec_APP
                 
                 listItems[i].Price = Product[i].price;
 
-                listItems[i].Icon = Properties.Resources.search;     
+                listItems[i].Icon = Image.FromFile(@"C:\Users\domin\Documents\Studia\Zespołowy Projekt Programistyczny\Skapiec_APP\img\" + Product[i].title + ".jpg");
+                //każdy niech daje swoją ścieżkę żeby spawdzać czy działa                
+                //wygląda na to że tytuły zdjęć muszą być takie jak tytuły ofert   
 
                 // dodawnie do flow layout panelu 
                 if (home_panel.Controls.Count < 0)
@@ -50,11 +51,7 @@ namespace Skapiec_APP
                 else
                     home_panel.Controls.Add(listItems[i]);
             }
-        }
-        /*private void LoadImage()
-        {
-            Img = SqliteDataAccess.LoadProducts();            
-        }*/
+        }         
 
         private void LoadProductsList()
         {
