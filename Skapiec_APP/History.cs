@@ -45,8 +45,9 @@ namespace Skapiec_APP
                 listItems[i] = new HistoryItem();
                 
                 listItems[i].Title = Search[i].search_query;
-                listItems[i].Title2 = Search[i].search_query;
+                
 
+                
                 // dodawnie do flow layout panelu 
                 if (history_panel.Controls.Count < 0)
                 {

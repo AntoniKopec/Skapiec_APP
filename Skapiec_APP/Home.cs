@@ -23,10 +23,12 @@ namespace Skapiec_APP
             InitializeComponent();
             LoadProductsList();
             LoadSearchList();
-            populateItems();            
+            populateItemsHome();
         }
 
-        private void populateItems()
+
+        //zapełnienie panelu danymi z searcha
+        public void populateItemsHome()
         {
             //wypełnienie
             HomeItem[] listItems = new HomeItem[2];
@@ -63,31 +65,61 @@ namespace Skapiec_APP
         private void LoadSearchList()
         {
             Search = SqliteDataAccess.LoadSearch();
-            WireUpSearchList();
+            WireUpSearchList(); //podglądowe okienko list box do wyrzucenia jak wszystko będzie śmigać
         }
 
-        private void WireUpSearchList()
-        {
-            test.DataSource = null;
-            test.DataSource = Search;
-            test.DisplayMember = "search_query";
-        }
+        
 
         private void search_TextChanged(object sender, EventArgs e)
         {
 
         }
 
+
+        //zapełnienie panelu danymi z histori
+        private void populateItemsHistory()
+        {
+            home_panel.Controls.Clear();
+            //wypełnienie 
+            HistoryItem[] listItems = new HistoryItem[2];
+
+            for (int i = 0; i < listItems.Length; i++)
+            {
+                listItems[i] = new HistoryItem();
+
+                listItems[i].Title = Search[i].search_query;
+
+
+                // dodawnie do flow layout panelu 
+                if (home_panel.Controls.Count < 0)
+                {
+                    home_panel.Controls.Clear();
+                }
+                else
+                    home_panel.Controls.Add(listItems[i]);
+            }
+        }
+
+        
+
+        private void history_btn_Click(object sender, EventArgs e)
+        {
+            populateItemsHistory();
+            //History history = new History();
+            //history.Show();
+            //this.Hide();
+        }
+
+        //podglądowe okienko list box do wyrzucenia jak wszystko będzie śmigać
         private void test_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
-        private void history_btn_Click(object sender, EventArgs e)
+        private void WireUpSearchList()
         {
-            History history = new History();
-            history.Show();
-            this.Hide();
+            test.DataSource = null;
+            test.DataSource = Search;
+            test.DisplayMember = "search_query";
         }
     }
 }

@@ -39,10 +39,11 @@
             // home_picture
             // 
             this.home_picture.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("home_picture.BackgroundImage")));
-            this.home_picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.home_picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.home_picture.Location = new System.Drawing.Point(47, 15);
             this.home_picture.Name = "home_picture";
             this.home_picture.Size = new System.Drawing.Size(140, 154);
+            this.home_picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.home_picture.TabIndex = 1;
             this.home_picture.TabStop = false;
             // 
