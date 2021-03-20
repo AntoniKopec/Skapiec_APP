@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Configuration;
 using System.Data.SQLite;
@@ -24,6 +21,7 @@ namespace Skapiec_APP
         public string image { get; set; }
         public string title { get; set; }
         public string price { get; set; }
+        public string link { get; set; }
     }
 
 
