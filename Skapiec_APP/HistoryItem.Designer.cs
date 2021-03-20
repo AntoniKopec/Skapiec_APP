@@ -32,6 +32,7 @@
             this.title_label = new System.Windows.Forms.Label();
             this.history_picture = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.title_btn_hist = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.history_picture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,16 +64,27 @@
             this.panel1.Size = new System.Drawing.Size(229, 1);
             this.panel1.TabIndex = 2;
             // 
+            // title_btn_hist
+            // 
+            this.title_btn_hist.Location = new System.Drawing.Point(79, 230);
+            this.title_btn_hist.Name = "title_btn_hist";
+            this.title_btn_hist.Size = new System.Drawing.Size(75, 23);
+            this.title_btn_hist.TabIndex = 3;
+            this.title_btn_hist.Text = "button1";
+            this.title_btn_hist.UseVisualStyleBackColor = true;
+            this.title_btn_hist.Click += new System.EventHandler(this.title_btn_hist_Click);
+            // 
             // HistoryItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.title_btn_hist);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.title_label);
             this.Controls.Add(this.history_picture);
             this.Name = "HistoryItem";
-            this.Size = new System.Drawing.Size(235, 231);
+            this.Size = new System.Drawing.Size(235, 297);
             ((System.ComponentModel.ISupportInitialize)(this.history_picture)).EndInit();
             this.ResumeLayout(false);
 
@@ -82,5 +94,6 @@
         private System.Windows.Forms.Label title_label;
         private System.Windows.Forms.PictureBox history_picture;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button title_btn_hist;
     }
 }

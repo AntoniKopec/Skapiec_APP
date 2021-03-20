@@ -22,12 +22,19 @@ namespace Skapiec_APP
 
         private string _title;
         private Image _icon;
+        private string _title2;
 
         [Category("Custom Props")]
         public string Title
         {
             get { return _title; }
             set { _title = value; title_label.Text = value; }         
+        }
+        [Category("Custom Props")]
+        public string Title2
+        {
+            get { return _title2; }
+            set { _title2 = value; title_btn_hist.Text = value; }
         }
 
 
@@ -39,8 +46,15 @@ namespace Skapiec_APP
         }
 
 
+
         #endregion
 
-
+        private void title_btn_hist_Click(object sender, EventArgs e)
+        {
+            History history = new History();
+            Home home = new Home();
+            home.Show();
+           
+        }
     }
 }
