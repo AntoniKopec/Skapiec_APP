@@ -39,7 +39,7 @@ namespace Skapiec_APP
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute("insert into run (search_text) values (@search_text)", run);
+                cnn.Execute("update run set search_text = @search_text where ID is 1", run);
             }
         }
 

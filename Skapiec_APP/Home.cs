@@ -40,16 +40,21 @@ namespace Skapiec_APP
         
         private void search_btn_Click(object sender, EventArgs e)
         {
-            AddData();
+            UpdateRun();
+            // AddData();            
             search_text.Text = "";
             System.Windows.Forms.Application.Restart();
         }
 
-        public void AddData()
+        public void UpdateRun()
         {
             RunSearch runSearch = new RunSearch();
             runSearch.search_text = search_text.Text;
             SqliteDataAccess.SaveRun(runSearch);
+        }
+        public void AddData()
+        {
+            
 
             HtmlWeb web = new HtmlWeb();
             var doc = web.Load($"https://www.skapiec.pl/szukaj/w_calym_serwisie/{search_text.Text}");
