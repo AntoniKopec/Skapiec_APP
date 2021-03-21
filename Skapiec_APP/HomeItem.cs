@@ -63,7 +63,6 @@ namespace Skapiec_APP
         private void button1_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start($"{link_search}");
-            MessageBox.Show("COS DZIALA");
         }
     }
 }

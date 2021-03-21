@@ -114,7 +114,7 @@ namespace Skapiec_APP
         {
             home_panel.Controls.Clear();
             //wypełnienie 
-            HistoryItem[] listItems = new HistoryItem[2];
+            HistoryItem[] listItems = new HistoryItem[20];
 
             for (int i = 0; i < listItems.Length; i++)
             {
