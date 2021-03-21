@@ -42,6 +42,14 @@ namespace Skapiec_APP
                 cnn.Execute("insert into run (search_text) values (@search_text)", run);
             }
         }
+
+        public static void SaveRun(ProductsModel productsModel)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("insert into products (search_query, image, title, price, link) values (@search_query, @image, @title, @price, @link)", productsModel);
+            }
+        }
         public static List<RunSearch> LoadRun()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))

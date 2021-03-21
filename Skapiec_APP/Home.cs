@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Configuration;
-using System.Data.SQLite;
-using Dapper;
+using HtmlAgilityPack;
+using System.Web;
 
 namespace Skapiec_APP
 {
@@ -47,13 +41,31 @@ namespace Skapiec_APP
         private void search_btn_Click(object sender, EventArgs e)
         {
             RunSearch runSearch = new RunSearch();
-
             runSearch.search_text = search_text.Text;
-
             SqliteDataAccess.SaveRun(runSearch);
 
-            search_text.Text = "";
+            HtmlWeb web = new HtmlWeb();
+            var doc = web.Load($"https://www.skapiec.pl/szukaj/w_calym_serwisie/{search_text.Text}");
 
+            var Articles = doc.DocumentNode.SelectNodes("//*[@class = 'box-row js']");
+            foreach (var article in Articles)
+            {
+                var title = HttpUtility.HtmlDecode(article.SelectSingleNode(".//h2[@class = 'title gtm_red_solink']").InnerText);
+                var price = HttpUtility.HtmlDecode(article.SelectSingleNode(".//strong[@class = 'price gtm_sor_price']").InnerText);
+                var link = HttpUtility.HtmlDecode(article.SelectSingleNode(".//a[@class = 'btn l direct-link-1 gtm_sor_button']").GetAttributeValue("href", string.Empty).ToString());
+                var image = HttpUtility.HtmlDecode(article.SelectSingleNode(".//img").Attributes["src"].Value.ToString());
+                var bytes = Encoding.Default.GetBytes(image);
+
+                ProductsModel productsModel = new ProductsModel();
+                productsModel.search_query = search_text.Text;
+                productsModel.image = bytes;
+                productsModel.title = title;
+                productsModel.price = price;
+                productsModel.link = "https://www.skapiec.pl" + link;
+                SqliteDataAccess.SaveRun(productsModel);
+            }
+            search_text.Text = "";
+            System.Windows.Forms.Application.Restart();
         }
 
 
@@ -69,7 +81,7 @@ namespace Skapiec_APP
         public void populateItemsHome()
         {
             //wypełnienie
-            HomeItem[] listItems = new HomeItem[2];
+            HomeItem[] listItems = new HomeItem[19];
 
             for (int i = 0; i < listItems.Length; i++)
             {
