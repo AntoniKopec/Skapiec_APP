@@ -33,6 +33,7 @@
             this.home_title_label = new System.Windows.Forms.Label();
             this.price_label = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.home_picture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,14 +43,14 @@
             this.home_picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.home_picture.Location = new System.Drawing.Point(47, 15);
             this.home_picture.Name = "home_picture";
-            this.home_picture.Size = new System.Drawing.Size(140, 154);
+            this.home_picture.Size = new System.Drawing.Size(140, 211);
             this.home_picture.TabIndex = 1;
             this.home_picture.TabStop = false;
             // 
             // home_title_label
             // 
             this.home_title_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.home_title_label.Location = new System.Drawing.Point(3, 180);
+            this.home_title_label.Location = new System.Drawing.Point(3, 260);
             this.home_title_label.Name = "home_title_label";
             this.home_title_label.Size = new System.Drawing.Size(229, 47);
             this.home_title_label.TabIndex = 2;
@@ -59,7 +60,7 @@
             // price_label
             // 
             this.price_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.price_label.Location = new System.Drawing.Point(3, 243);
+            this.price_label.Location = new System.Drawing.Point(3, 323);
             this.price_label.Name = "price_label";
             this.price_label.Size = new System.Drawing.Size(229, 47);
             this.price_label.TabIndex = 3;
@@ -69,23 +70,33 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Location = new System.Drawing.Point(3, 235);
+            this.panel1.Location = new System.Drawing.Point(3, 315);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(229, 1);
             this.panel1.TabIndex = 4;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(80, 232);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // HomeItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.price_label);
             this.Controls.Add(this.home_title_label);
             this.Controls.Add(this.home_picture);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HomeItem";
-            this.Size = new System.Drawing.Size(235, 294);
+            this.Size = new System.Drawing.Size(235, 371);
             ((System.ComponentModel.ISupportInitialize)(this.home_picture)).EndInit();
             this.ResumeLayout(false);
 
@@ -97,5 +108,6 @@
         private System.Windows.Forms.Label home_title_label;
         private System.Windows.Forms.Label price_label;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
     }
 }

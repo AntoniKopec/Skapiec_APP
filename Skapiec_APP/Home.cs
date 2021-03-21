@@ -76,7 +76,7 @@ namespace Skapiec_APP
                 listItems[i] = new HomeItem();
 
                 listItems[i].Title = Product[i].title;
-
+                listItems[i].Button = Product[i].link;
                 listItems[i].Price = Product[i].price;
 
                 //listItems[i].Icon = Image.FromFile(@"C:\Users\domin\Documents\Studia\Zespołowy Projekt Programistyczny\Skapiec_APP\img\" + Product[i].title + ".jpg");

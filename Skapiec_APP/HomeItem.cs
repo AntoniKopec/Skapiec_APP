@@ -21,7 +21,19 @@ namespace Skapiec_APP
 
         private string _title;
         private string _price;
-        private Image _icon;       
+        private Image _icon;
+
+        //-----------------
+        private string _btn;
+
+        [Category("Custom Props")]
+        public string Button
+        {
+            get { return _btn; }
+            set { _btn = value; button1.Text = value; }
+        }
+
+        //------------------
 
         [Category("Custom Props")]
         public string Title
