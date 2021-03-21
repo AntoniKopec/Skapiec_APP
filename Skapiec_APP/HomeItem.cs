@@ -58,5 +58,11 @@ namespace Skapiec_APP
 
 
         #endregion
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start($"{button1.Text}");
+            MessageBox.Show("COS DZIALA");
+        }
     }
 }

@@ -81,7 +81,9 @@ namespace Skapiec_APP
         public void populateItemsHome()
         {
             //wypełnienie
-            HomeItem[] listItems = new HomeItem[19];
+            HomeItem[] listItems = new HomeItem[0];
+
+
 
             for (int i = 0; i < listItems.Length; i++)
             {
