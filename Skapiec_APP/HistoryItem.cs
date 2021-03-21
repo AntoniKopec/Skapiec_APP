@@ -27,7 +27,7 @@ namespace Skapiec_APP
         public string Title
         {
             get { return _title; }
-            set { _title = value; title_label.Text = value; }         
+            set { _title = value.Distinct().ToString(); title_label.Text = value; }         
         }
         
 

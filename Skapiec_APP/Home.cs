@@ -40,6 +40,13 @@ namespace Skapiec_APP
         
         private void search_btn_Click(object sender, EventArgs e)
         {
+            AddData();
+            search_text.Text = "";
+            System.Windows.Forms.Application.Restart();
+        }
+
+        public void AddData()
+        {
             RunSearch runSearch = new RunSearch();
             runSearch.search_text = search_text.Text;
             SqliteDataAccess.SaveRun(runSearch);
@@ -64,8 +71,6 @@ namespace Skapiec_APP
                 productsModel.link = "https://www.skapiec.pl" + link;
                 SqliteDataAccess.SaveProducts(productsModel);
             }
-            search_text.Text = "";
-            System.Windows.Forms.Application.Restart();
         }
 
 
@@ -146,8 +151,5 @@ namespace Skapiec_APP
             test.DataSource = Run;
             test.DisplayMember = "search_text";
         }
-
-        
-
     }
 }
