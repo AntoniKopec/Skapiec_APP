@@ -59,12 +59,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="History.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="History.Designer.cs">
-      <DependentUpon>History.cs</DependentUpon>
-    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,9 +87,6 @@
     <None Include="Resources\search.png" />
     <None Include="Resources\skapiec_logo.png" />
     <None Include="Resources\skapiec_logo.jpg" />
-    <EmbeddedResource Include="History.resx">
-      <DependentUpon>History.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>

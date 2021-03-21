@@ -47,6 +47,7 @@ namespace Skapiec_APP
         private void HistoryItem_MouseClick(object sender, MouseEventArgs e)
         {
             System.Windows.Forms.Application.Restart();
+            
         }
 
         private void HistoryItem_MouseHover(object sender, EventArgs e)

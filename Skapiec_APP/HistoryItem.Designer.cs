@@ -52,7 +52,6 @@
             this.history_picture.Location = new System.Drawing.Point(47, 15);
             this.history_picture.Name = "history_picture";
             this.history_picture.Size = new System.Drawing.Size(140, 211);
-            this.history_picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.history_picture.TabIndex = 0;
             this.history_picture.TabStop = false;
             // 

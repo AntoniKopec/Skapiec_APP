@@ -7,23 +7,24 @@ using Dapper;
 
 namespace Skapiec_APP
 {
-    public class SearchModel
-    {
-        public int ID { get; set; }
-        public string search_query { get; set; }      
-    }
+    
 
 
     public class ProductsModel
     {
         public int ID { get; set; }
-        public int search_query { get; set; }
-        public string image { get; set; }
+        public string search_query { get; set; }
+        public byte[] image { get; set; }
         public string title { get; set; }
         public string price { get; set; }
         public string link { get; set; }
     }
 
+    public class RunSearch
+    {
+        public int ID { get; set; }
+        public string search_text { get; set; }
+    }
 
     class SqliteDataAccess
     {
@@ -34,14 +35,23 @@ namespace Skapiec_APP
         }
 
 
-        public static List<SearchModel> LoadSearch()
+        public static void SaveRun(RunSearch run)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<SearchModel>("select * from search", new DynamicParameters());
+                cnn.Execute("insert into run (search_text) values (@search_text)", run);
+            }
+        }
+        public static List<RunSearch> LoadRun()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = cnn.Query<RunSearch>("select * from run", new DynamicParameters());
                 return output.ToList();
             }
         }
+
+        
 
         
         public static List<ProductsModel> LoadProducts()
