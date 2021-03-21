@@ -62,7 +62,7 @@ namespace Skapiec_APP
                 productsModel.title = title;
                 productsModel.price = price;
                 productsModel.link = "https://www.skapiec.pl" + link;
-                SqliteDataAccess.SaveRun(productsModel);
+                SqliteDataAccess.SaveProducts(productsModel);
             }
             search_text.Text = "";
             System.Windows.Forms.Application.Restart();
@@ -81,7 +81,7 @@ namespace Skapiec_APP
         public void populateItemsHome()
         {
             //wypełnienie
-            HomeItem[] listItems = new HomeItem[0];
+            HomeItem[] listItems = new HomeItem[20];
 
 
 

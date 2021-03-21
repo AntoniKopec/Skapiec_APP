@@ -17,6 +17,7 @@ namespace Skapiec_APP
             InitializeComponent();
         }
 
+        string link_search;
         #region Properties
 
         private string _title;
@@ -30,7 +31,7 @@ namespace Skapiec_APP
         public string Button
         {
             get { return _btn; }
-            set { _btn = value; button1.Text = value; }
+            set { _btn = value; link_search = value; }
         }
 
         //------------------
@@ -61,7 +62,7 @@ namespace Skapiec_APP
 
         private void button1_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start($"{button1.Text}");
+            System.Diagnostics.Process.Start($"{link_search}");
             MessageBox.Show("COS DZIALA");
         }
     }

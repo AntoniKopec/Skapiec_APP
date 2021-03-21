@@ -43,7 +43,7 @@ namespace Skapiec_APP
             }
         }
 
-        public static void SaveRun(ProductsModel productsModel)
+        public static void SaveProducts(ProductsModel productsModel)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
