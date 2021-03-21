@@ -44,20 +44,24 @@ namespace Skapiec_APP
         #endregion
 
        
-        private void HistoryItem_MouseClick(object sender, MouseEventArgs e)
-        {
-            System.Windows.Forms.Application.Restart();
-            
-        }
+      
 
-        private void HistoryItem_MouseHover(object sender, EventArgs e)
+        private void title_label_MouseHover(object sender, EventArgs e)
         {
             this.BackColor = Color.Silver;
         }
 
-        private void HistoryItem_MouseLeave(object sender, EventArgs e)
+        private void title_label_MouseLeave(object sender, EventArgs e)
         {
             this.BackColor = Color.White;
+        }
+
+        private void title_label_MouseClick(object sender, MouseEventArgs e)
+        {
+            RunSearch runSearch = new RunSearch();
+            runSearch.search_text = title_label.Text;
+            SqliteDataAccess.SaveRun(runSearch);
+            System.Windows.Forms.Application.Restart();
         }
     }
 }

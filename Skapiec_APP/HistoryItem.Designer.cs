@@ -44,6 +44,9 @@
             this.title_label.TabIndex = 1;
             this.title_label.Text = "Title";
             this.title_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.title_label.MouseClick += new System.Windows.Forms.MouseEventHandler(this.title_label_MouseClick);
+            this.title_label.MouseLeave += new System.EventHandler(this.title_label_MouseLeave);
+            this.title_label.MouseHover += new System.EventHandler(this.title_label_MouseHover);
             // 
             // history_picture
             // 
@@ -73,9 +76,6 @@
             this.Controls.Add(this.history_picture);
             this.Name = "HistoryItem";
             this.Size = new System.Drawing.Size(235, 311);
-            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.HistoryItem_MouseClick);
-            this.MouseLeave += new System.EventHandler(this.HistoryItem_MouseLeave);
-            this.MouseHover += new System.EventHandler(this.HistoryItem_MouseHover);
             ((System.ComponentModel.ISupportInitialize)(this.history_picture)).EndInit();
             this.ResumeLayout(false);
 
