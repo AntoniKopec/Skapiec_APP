@@ -4,6 +4,7 @@ using System.Text;
 using System.Windows.Forms;
 using HtmlAgilityPack;
 using System.Web;
+using System.Net;
 
 namespace Skapiec_APP
 {
@@ -41,40 +42,68 @@ namespace Skapiec_APP
         private void search_btn_Click(object sender, EventArgs e)
         {
             UpdateRun();
-            // AddData();            
+            AddData();            
             search_text.Text = "";
             System.Windows.Forms.Application.Restart();
         }
 
         public void UpdateRun()
         {
-            RunSearch runSearch = new RunSearch();
-            runSearch.search_text = search_text.Text;
-            SqliteDataAccess.SaveRun(runSearch);
+            if (CheckInternetConnection())
+            {
+                RunSearch runSearch = new RunSearch();
+                runSearch.search_text = search_text.Text;
+                SqliteDataAccess.SaveRun(runSearch);
+            }
+            else
+            {
+            }
+
         }
         public void AddData()
         {
-            
-
-            HtmlWeb web = new HtmlWeb();
-            var doc = web.Load($"https://www.skapiec.pl/szukaj/w_calym_serwisie/{search_text.Text}");
-
-            var Articles = doc.DocumentNode.SelectNodes("//*[@class = 'box-row js']");
-            foreach (var article in Articles)
+            if(CheckInternetConnection())
             {
-                var title = HttpUtility.HtmlDecode(article.SelectSingleNode(".//h2[@class = 'title gtm_red_solink']").InnerText);
-                var price = HttpUtility.HtmlDecode(article.SelectSingleNode(".//strong[@class = 'price gtm_sor_price']").InnerText);
-                var link = HttpUtility.HtmlDecode(article.SelectSingleNode(".//a[@class = 'btn l direct-link-1 gtm_sor_button']").GetAttributeValue("href", string.Empty).ToString());
-                var image = HttpUtility.HtmlDecode(article.SelectSingleNode(".//img").Attributes["src"].Value.ToString());
-                var bytes = Encoding.Default.GetBytes(image);
+                HtmlWeb web = new HtmlWeb();
+                var doc = web.Load($"https://www.skapiec.pl/szukaj/w_calym_serwisie/{search_text.Text}");
 
-                ProductsModel productsModel = new ProductsModel();
-                productsModel.search_query = search_text.Text;
-                productsModel.image = bytes;
-                productsModel.title = title;
-                productsModel.price = price;
-                productsModel.link = "https://www.skapiec.pl" + link;
-                SqliteDataAccess.SaveProducts(productsModel);
+                var Articles = doc.DocumentNode.SelectNodes("//*[@class = 'box-row js']");
+                foreach (var article in Articles)
+                {
+                    var title = HttpUtility.HtmlDecode(article.SelectSingleNode(".//h2[@class = 'title gtm_red_solink']").InnerText);
+                    var price = HttpUtility.HtmlDecode(article.SelectSingleNode(".//strong[@class = 'price gtm_sor_price']").InnerText);
+                    var link = HttpUtility.HtmlDecode(article.SelectSingleNode(".//a[@class = 'btn l direct-link-1 gtm_sor_button']").GetAttributeValue("href", string.Empty).ToString());
+                    var image = HttpUtility.HtmlDecode(article.SelectSingleNode(".//img").Attributes["src"].Value.ToString());
+                    var bytes = Encoding.Default.GetBytes(image);
+
+                    ProductsModel productsModel = new ProductsModel();
+                    productsModel.search_query = search_text.Text;
+                    productsModel.image = bytes;
+                    productsModel.title = title;
+                    productsModel.price = price;
+                    productsModel.link = "https://www.skapiec.pl" + link;
+                    SqliteDataAccess.SaveProducts(productsModel);
+                }
+            }
+                else
+            {
+                MessageBox.Show("Brak internetu - stare dane");
+            }
+        }
+
+        public static bool CheckInternetConnection()
+        {
+            try
+            {
+                using (var client = new WebClient())
+                using (var stream = client.OpenRead("http://www.google.com"))
+                {
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
             }
         }
 
