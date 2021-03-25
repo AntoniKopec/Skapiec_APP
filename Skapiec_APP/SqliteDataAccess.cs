@@ -7,9 +7,6 @@ using Dapper;
 
 namespace Skapiec_APP
 {
-    
-
-
     public class ProductsModel
     {
         public int ID { get; set; }
@@ -54,6 +51,7 @@ namespace Skapiec_APP
                 cnn.Execute("insert into products (search_query, image, title, price, link) values (@search_query, @image, @title, @price, @link)", productsModel);
             }
         }
+
         public static List<RunSearch> LoadRun()
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))

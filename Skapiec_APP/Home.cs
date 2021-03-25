@@ -12,20 +12,8 @@ namespace Skapiec_APP
     {
         List<ProductsModel> Product = new List<ProductsModel>();
         List<HistoryModel> History = new List<HistoryModel>();
-
-
         List<RunSearch> Run = new List<RunSearch>();
-        public Home()
-        {
-            InitializeComponent();
-            LoadList();
-            populateItemsHome();
-        }
 
-
-        //test     
-
-        
         private void LoadList()
         {
             Product = SqliteDataAccess.LoadProducts();
@@ -34,15 +22,13 @@ namespace Skapiec_APP
             WireUpSearchList(); //podglądowe okienko list box do wyrzucenia jak wszystko będzie śmigać
         }
 
-
-
-        private void search_text_TextChanged(object sender, EventArgs e)
+        public Home()
         {
-
+            InitializeComponent();
+            LoadList();
+            populateItemsHome();
         }
 
-
-        
         private void search_btn_Click(object sender, EventArgs e)
         {
             UpdateRun();
@@ -118,8 +104,6 @@ namespace Skapiec_APP
         }
 
 
-
-
         //zapełnienie panelu danymi z searcha
         public void populateItemsHome()
         {
@@ -178,7 +162,6 @@ namespace Skapiec_APP
         }
 
 
-
         //podglądowe okienko list box do wyrzucenia jak wszystko będzie śmigać
         private void test_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -189,6 +172,12 @@ namespace Skapiec_APP
             test.DataSource = null;
             test.DataSource = Run;
             test.DisplayMember = "search_text";
+        }
+        //----------
+
+        private void search_text_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

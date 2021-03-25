@@ -43,9 +43,6 @@ namespace Skapiec_APP
 
         #endregion
 
-       
-      
-
         private void title_label_MouseHover(object sender, EventArgs e)
         {
             this.BackColor = Color.Silver;
