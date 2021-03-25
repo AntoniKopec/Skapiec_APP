@@ -11,8 +11,8 @@ namespace Skapiec_APP
     public partial class Home : Form
     {
         List<ProductsModel> Product = new List<ProductsModel>();
+        List<HistoryModel> History = new List<HistoryModel>();
 
-        
 
         List<RunSearch> Run = new List<RunSearch>();
         public Home()
@@ -29,6 +29,7 @@ namespace Skapiec_APP
         private void LoadList()
         {
             Product = SqliteDataAccess.LoadProducts();
+            History = SqliteDataAccess.LoadHistory();
             Run = SqliteDataAccess.LoadRun();
             WireUpSearchList(); //podglądowe okienko list box do wyrzucenia jak wszystko będzie śmigać
         }
@@ -155,7 +156,7 @@ namespace Skapiec_APP
         private void populateItemsHistory()
         {
             home_panel.Controls.Clear();
-            int count = Product.Count;
+            int count = History.Count;
             //wypełnienie 
             HistoryItem[] listItems = new HistoryItem[count];
 
@@ -163,7 +164,7 @@ namespace Skapiec_APP
             {
                 listItems[i] = new HistoryItem();
 
-                listItems[i].Title = Product[i].search_query;
+                listItems[i].Title = History[i].search_query;
 
 
                 // dodawnie do flow layout panelu 

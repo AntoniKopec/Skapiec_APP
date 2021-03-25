@@ -19,10 +19,14 @@ namespace Skapiec_APP
         public string price { get; set; }
         public string link { get; set; }
     }
+    public class HistoryModel
+    {
+        public int ID { get; set; }
+        public string search_query { get; set; }
+    }
 
     public class RunSearch
     {
-        public int ID { get; set; }
         public string search_text { get; set; }
     }
 
@@ -58,16 +62,19 @@ namespace Skapiec_APP
                 return output.ToList();
             }
         }
-
-        
-
-        
         public static List<ProductsModel> LoadProducts()
-        {
-            
+        {            
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
                 var output = cnn.Query<ProductsModel>("select * from products INNER JOIN run ON products.search_query = run.search_text", new DynamicParameters());
+                return output.ToList();
+            }
+        }
+        public static List<HistoryModel> LoadHistory()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var output = cnn.Query<HistoryModel>("select distinct search_query from products", new DynamicParameters());
                 return output.ToList();
             }
         }
