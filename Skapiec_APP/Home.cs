@@ -42,7 +42,7 @@ namespace Skapiec_APP
         private void search_btn_Click(object sender, EventArgs e)
         {
             UpdateRun();
-            AddData();            
+          //  AddData();            
             search_text.Text = "";
             System.Windows.Forms.Application.Restart();
         }
@@ -120,7 +120,7 @@ namespace Skapiec_APP
         public void populateItemsHome()
         {
             //wypełnienie
-            HomeItem[] listItems = new HomeItem[20];
+            HomeItem[] listItems = new HomeItem[10];
 
 
 
