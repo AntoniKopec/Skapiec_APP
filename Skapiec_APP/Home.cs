@@ -123,7 +123,6 @@ namespace Skapiec_APP
         public void populateItemsHome()
         {
             int count = Product.Count;
-            //int count2 = 2;
             //wypełnienie
             HomeItem[] listItems = new HomeItem[count];            
 
@@ -156,8 +155,9 @@ namespace Skapiec_APP
         private void populateItemsHistory()
         {
             home_panel.Controls.Clear();
+            int count = Product.Count;
             //wypełnienie 
-            HistoryItem[] listItems = new HistoryItem[20];
+            HistoryItem[] listItems = new HistoryItem[count];
 
             for (int i = 0; i < listItems.Length; i++)
             {

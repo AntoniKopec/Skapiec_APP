@@ -64,9 +64,10 @@ namespace Skapiec_APP
         
         public static List<ProductsModel> LoadProducts()
         {
+            
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<ProductsModel>("select * from products", new DynamicParameters());
+                var output = cnn.Query<ProductsModel>("select * from products INNER JOIN run ON products.search_query = run.search_text", new DynamicParameters());
                 return output.ToList();
             }
         }
