@@ -11,6 +11,9 @@ namespace Skapiec_APP
     public partial class Home : Form
     {
         List<ProductsModel> Product = new List<ProductsModel>();
+
+        
+
         List<RunSearch> Run = new List<RunSearch>();
         public Home()
         {
@@ -42,7 +45,7 @@ namespace Skapiec_APP
         private void search_btn_Click(object sender, EventArgs e)
         {
             UpdateRun();
-          //  AddData();            
+            //AddData();            
             search_text.Text = "";
             System.Windows.Forms.Application.Restart();
         }
@@ -119,9 +122,10 @@ namespace Skapiec_APP
         //zapełnienie panelu danymi z searcha
         public void populateItemsHome()
         {
+            int count = Product.Count;
+            //int count2 = 2;
             //wypełnienie
-            HomeItem[] listItems = new HomeItem[10];
-
+            HomeItem[] listItems = new HomeItem[count];            
 
 
             for (int i = 0; i < listItems.Length; i++)
