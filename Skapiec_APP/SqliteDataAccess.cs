@@ -44,6 +44,14 @@ namespace Skapiec_APP
             }
         }
 
+        public static void DeleteProducts(ProductsModel productsModel)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("DELETE from products WHERE search_query in (select search_text from run where ID is 1)", productsModel);
+            }
+        }
+        
         public static void SaveProducts(ProductsModel productsModel)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))

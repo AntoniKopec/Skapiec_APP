@@ -32,9 +32,16 @@ namespace Skapiec_APP
         private void search_btn_Click(object sender, EventArgs e)
         {
             UpdateRun();
-            //AddData();            
+            DeleteSearchProd();
+            AddData();            
             search_text.Text = "";
             System.Windows.Forms.Application.Restart();
+        }
+
+        public void DeleteSearchProd()
+        {
+            ProductsModel productsModel = new ProductsModel();
+            SqliteDataAccess.DeleteProducts(productsModel);
         }
 
         public void UpdateRun()
