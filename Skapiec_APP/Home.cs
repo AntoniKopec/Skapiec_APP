@@ -80,13 +80,13 @@ namespace Skapiec_APP
                     using (WebClient client = new WebClient())
                     //WLASNA SCIEZKA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                     {
-                        client.DownloadFile(new Uri(image), $@"F:\PROJEKT1\Skapiec_APP\Skapiec_APP\img\test\{fixedLink}.jpg");
+                        client.DownloadFile(new Uri(image), $@"C:\Users\anton\Desktop\Projekt_1\Skapiec_APP\img\{fixedLink}.jpg");
                     }
 
                     ProductsModel productsModel = new ProductsModel();
                     productsModel.search_query = search_text.Text;
                     //WLASNA SCIEZKA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                    productsModel.image = $@"F:\PROJEKT1\Skapiec_APP\Skapiec_APP\img\test\{fixedLink}.jpg";
+                    productsModel.image = $@"C:\Users\anton\Desktop\Projekt_1\Skapiec_APP\img\{fixedLink}.jpg";
                     //WLASNA SCIEZKA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                     productsModel.title = title;
                     productsModel.price = price;
@@ -140,7 +140,7 @@ namespace Skapiec_APP
                 listItems[i].Button = Product[i].link;
                 listItems[i].Price = Product[i].price;
                 //WLASNA SCIEZKA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                listItems[i].Icon = Image.FromFile(@"F:\PROJEKT1\Skapiec_APP\Skapiec_APP\img\test\" + Product[i].image_name + ".jpg");
+              //  listItems[i].Icon = Image.FromFile(@"C:\Users\anton\Desktop\Projekt_1\Skapiec_APP\img\" + Product[i].image_name + ".jpg");
                 //WLASNA SCIEZKA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
                 //listItems[i].Icon = Image.FromFile(@"C:\Users\anton\Desktop\Projekt_1\" + Product[i].image);
@@ -172,7 +172,7 @@ namespace Skapiec_APP
                 listItems[i].Title = History[i].search_query;
 
                 //WLASNA SCIEZKA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                listItems[i].Icon = Image.FromFile(@"F:\PROJEKT1\Skapiec_APP\Skapiec_APP\img\test\" + Product[i].image_name + ".jpg");
+              // listItems[i].Icon = Image.FromFile(@"C:\Users\anton\Desktop\Projekt_1\Skapiec_APP\img\" + History[i].image_name + ".jpg");
                 //WLASNA SCIEZKA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 

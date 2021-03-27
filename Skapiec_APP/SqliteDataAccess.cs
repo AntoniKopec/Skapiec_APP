@@ -21,6 +21,7 @@ namespace Skapiec_APP
     {
         public int ID { get; set; }
         public string search_query { get; set; }
+        public string image_name { get; set; }
     }
 
     public class RunSearch
@@ -88,3 +89,6 @@ namespace Skapiec_APP
 
     }
 }
+
+
+//select distinct search_query from products
