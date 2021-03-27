@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using HtmlAgilityPack;
 using System.Web;
 using System.Net;
+using System.Drawing;
 
 namespace Skapiec_APP
 {
@@ -57,10 +58,12 @@ namespace Skapiec_APP
             }
 
         }
+        
         public void AddData()
         {
             if(CheckInternetConnection())
             {
+
                 HtmlWeb web = new HtmlWeb();
                 var doc = web.Load($"https://www.skapiec.pl/szukaj/w_calym_serwisie/{search_text.Text}");
 
@@ -70,16 +73,25 @@ namespace Skapiec_APP
                     var title = HttpUtility.HtmlDecode(article.SelectSingleNode(".//h2[@class = 'title gtm_red_solink']").InnerText);
                     var price = HttpUtility.HtmlDecode(article.SelectSingleNode(".//strong[@class = 'price gtm_sor_price']").InnerText);
                     var link = HttpUtility.HtmlDecode(article.SelectSingleNode(".//a[@class = 'btn l direct-link-1 gtm_sor_button']").GetAttributeValue("href", string.Empty).ToString());
-                    //var image = HttpUtility.HtmlDecode(article.SelectSingleNode(".//img").Attributes["src"].Value.ToString());
-                   // var bytes = Encoding.Default.GetBytes(image);
+                    var image = HttpUtility.HtmlDecode(article.SelectSingleNode(".//img").Attributes["src"].Value.ToString());
+                    var fixedLink = link.Replace("/", "");
+
+                    //WLASNA SCIEZKA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    using (WebClient client = new WebClient())
+                    //WLASNA SCIEZKA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    {
+                        client.DownloadFile(new Uri(image), $@"F:\PROJEKT1\Skapiec_APP\Skapiec_APP\img\test\{fixedLink}.jpg");
+                    }
 
                     ProductsModel productsModel = new ProductsModel();
                     productsModel.search_query = search_text.Text;
-                    productsModel.image = "";
+                    //WLASNA SCIEZKA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    productsModel.image = $@"F:\PROJEKT1\Skapiec_APP\Skapiec_APP\img\test\{fixedLink}.jpg";
+                    //WLASNA SCIEZKA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                     productsModel.title = title;
                     productsModel.price = price;
                     productsModel.link = "https://www.skapiec.pl" + link;
-                    productsModel.image_name = "";
+                    productsModel.image_name = fixedLink;
                     SqliteDataAccess.SaveProducts(productsModel);
                 }
             }
@@ -127,8 +139,9 @@ namespace Skapiec_APP
                 listItems[i].Title = Product[i].title;
                 listItems[i].Button = Product[i].link;
                 listItems[i].Price = Product[i].price;
-
-                //listItems[i].Icon = Image.FromFile(@"C:\Users\domin\Documents\Studia\Zespołowy Projekt Programistyczny\Skapiec_APP\img\" + Product[i].title + ".jpg");
+                //WLASNA SCIEZKA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                listItems[i].Icon = Image.FromFile(@"F:\PROJEKT1\Skapiec_APP\Skapiec_APP\img\test\" + Product[i].image_name + ".jpg");
+                //WLASNA SCIEZKA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
                 //listItems[i].Icon = Image.FromFile(@"C:\Users\anton\Desktop\Projekt_1\" + Product[i].image);
                 //każdy niech daje swoją ścieżkę żeby spawdzać czy działa                
@@ -157,6 +170,10 @@ namespace Skapiec_APP
                 listItems[i] = new HistoryItem();
 
                 listItems[i].Title = History[i].search_query;
+
+                //WLASNA SCIEZKA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                listItems[i].Icon = Image.FromFile(@"F:\PROJEKT1\Skapiec_APP\Skapiec_APP\img\test\" + Product[i].image_name + ".jpg");
+                //WLASNA SCIEZKA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
                 // dodawnie do flow layout panelu 
