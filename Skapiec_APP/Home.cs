@@ -70,15 +70,16 @@ namespace Skapiec_APP
                     var title = HttpUtility.HtmlDecode(article.SelectSingleNode(".//h2[@class = 'title gtm_red_solink']").InnerText);
                     var price = HttpUtility.HtmlDecode(article.SelectSingleNode(".//strong[@class = 'price gtm_sor_price']").InnerText);
                     var link = HttpUtility.HtmlDecode(article.SelectSingleNode(".//a[@class = 'btn l direct-link-1 gtm_sor_button']").GetAttributeValue("href", string.Empty).ToString());
-                    var image = HttpUtility.HtmlDecode(article.SelectSingleNode(".//img").Attributes["src"].Value.ToString());
-                    var bytes = Encoding.Default.GetBytes(image);
+                    //var image = HttpUtility.HtmlDecode(article.SelectSingleNode(".//img").Attributes["src"].Value.ToString());
+                   // var bytes = Encoding.Default.GetBytes(image);
 
                     ProductsModel productsModel = new ProductsModel();
                     productsModel.search_query = search_text.Text;
-                    productsModel.image = bytes;
+                    productsModel.image = "";
                     productsModel.title = title;
                     productsModel.price = price;
                     productsModel.link = "https://www.skapiec.pl" + link;
+                    productsModel.image_name = "";
                     SqliteDataAccess.SaveProducts(productsModel);
                 }
             }

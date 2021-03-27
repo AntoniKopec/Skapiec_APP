@@ -11,10 +11,11 @@ namespace Skapiec_APP
     {
         public int ID { get; set; }
         public string search_query { get; set; }
-        public byte[] image { get; set; }
+        public string image { get; set; }
         public string title { get; set; }
         public string price { get; set; }
         public string link { get; set; }
+        public string image_name { get; set; }
     }
     public class HistoryModel
     {
@@ -56,7 +57,7 @@ namespace Skapiec_APP
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute("insert into products (search_query, image, title, price, link) values (@search_query, @image, @title, @price, @link)", productsModel);
+                cnn.Execute("insert into products (search_query, image, title, price, link, image_name) values (@search_query, @image, @title, @price, @link, @image_name)", productsModel);
             }
         }
 
