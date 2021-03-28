@@ -82,7 +82,7 @@ namespace Skapiec_APP
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<HistoryModel>("select distinct search_query from products", new DynamicParameters());
+                var output = cnn.Query<HistoryModel>("SELECT DISTINCT search_query, image_name FROM products GROUP BY search_query", new DynamicParameters());
                 return output.ToList();
             }
         }
