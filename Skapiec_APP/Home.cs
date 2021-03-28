@@ -137,7 +137,7 @@ namespace Skapiec_APP
                 listItems[i].Title = Product[i].title;
                 listItems[i].Button = Product[i].link;
                 listItems[i].Price = Product[i].price;
-                listItems[i].Icon = Image.FromFile($@"{image_path}" + Product[i].image_name + ".jpg");
+             //   listItems[i].Icon = Image.FromFile($@"{image_path}" + Product[i].image_name + ".jpg");
 
                 // dodawnie do flow layout panelu 
                 if (home_panel.Controls.Count < 0)
@@ -162,7 +162,7 @@ namespace Skapiec_APP
                 listItems[i] = new HistoryItem();
 
                 listItems[i].Title = History[i].search_query;
-                listItems[i].Icon = Image.FromFile($@"{image_path}" + History[i].image_name + ".jpg");
+              //  listItems[i].Icon = Image.FromFile($@"{image_path}" + History[i].image_name + ".jpg");
 
 
 
