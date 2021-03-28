@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.search_text = new System.Windows.Forms.TextBox();
-            this.test = new System.Windows.Forms.ListBox();
             this.history_btn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.search_btn = new System.Windows.Forms.Button();
@@ -46,15 +45,6 @@
             this.search_text.Size = new System.Drawing.Size(470, 46);
             this.search_text.TabIndex = 0;
             this.search_text.TextChanged += new System.EventHandler(this.search_text_TextChanged);
-            // 
-            // test
-            // 
-            this.test.FormattingEnabled = true;
-            this.test.Location = new System.Drawing.Point(361, 76);
-            this.test.Name = "test";
-            this.test.Size = new System.Drawing.Size(120, 95);
-            this.test.TabIndex = 1;
-            this.test.SelectedIndexChanged += new System.EventHandler(this.test_SelectedIndexChanged);
             // 
             // history_btn
             // 
@@ -106,9 +96,9 @@
             this.home_panel.AutoScroll = true;
             this.home_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.home_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.home_panel.Location = new System.Drawing.Point(0, 182);
+            this.home_panel.Location = new System.Drawing.Point(0, 74);
             this.home_panel.Name = "home_panel";
-            this.home_panel.Size = new System.Drawing.Size(983, 471);
+            this.home_panel.Size = new System.Drawing.Size(983, 579);
             this.home_panel.TabIndex = 5;
             // 
             // Home
@@ -118,7 +108,6 @@
             this.ClientSize = new System.Drawing.Size(983, 653);
             this.Controls.Add(this.home_panel);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.test);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(999, 699);
             this.MinimumSize = new System.Drawing.Size(999, 675);
@@ -134,7 +123,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox search_text;
-        private System.Windows.Forms.ListBox test;
         private System.Windows.Forms.Button history_btn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;

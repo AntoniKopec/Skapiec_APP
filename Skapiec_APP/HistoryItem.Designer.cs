@@ -37,10 +37,9 @@
             // title_label
             // 
             this.title_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.title_label.Location = new System.Drawing.Point(4, 313);
-            this.title_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.title_label.Location = new System.Drawing.Point(3, 254);
             this.title_label.Name = "title_label";
-            this.title_label.Size = new System.Drawing.Size(305, 58);
+            this.title_label.Size = new System.Drawing.Size(229, 47);
             this.title_label.TabIndex = 1;
             this.title_label.Text = "Title";
             this.title_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -50,34 +49,32 @@
             // 
             // history_picture
             // 
-            this.history_picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.history_picture.Location = new System.Drawing.Point(63, 18);
-            this.history_picture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.history_picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.history_picture.Location = new System.Drawing.Point(47, 15);
             this.history_picture.Name = "history_picture";
-            this.history_picture.Size = new System.Drawing.Size(187, 260);
+            this.history_picture.Size = new System.Drawing.Size(140, 211);
+            this.history_picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.history_picture.TabIndex = 0;
             this.history_picture.TabStop = false;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Location = new System.Drawing.Point(4, 306);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(3, 249);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(305, 1);
+            this.panel1.Size = new System.Drawing.Size(229, 1);
             this.panel1.TabIndex = 2;
             // 
             // HistoryItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.title_label);
             this.Controls.Add(this.history_picture);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "HistoryItem";
-            this.Size = new System.Drawing.Size(313, 383);
+            this.Size = new System.Drawing.Size(235, 311);
             ((System.ComponentModel.ISupportInitialize)(this.history_picture)).EndInit();
             this.ResumeLayout(false);
 

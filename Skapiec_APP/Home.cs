@@ -20,7 +20,6 @@ namespace Skapiec_APP
             Product = SqliteDataAccess.LoadProducts();
             History = SqliteDataAccess.LoadHistory();
             Run = SqliteDataAccess.LoadRun();
-            WireUpSearchList(); //podglądowe okienko list box do wyrzucenia jak wszystko będzie śmigać
         }
 
         public Home()
@@ -59,7 +58,7 @@ namespace Skapiec_APP
 
         }
         //WLASNA SCIEZKA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        private readonly string image_path = $@"F:\PROJEKT1\Skapiec_APP\Skapiec_APP\img\Test\";
+        private readonly string image_path = $@"C:\Users\anton\Desktop\Projekt_1\Skapiec_APP\img\";
         //WLASNA SCIEZKA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         public void AddData()
         {
@@ -137,7 +136,7 @@ namespace Skapiec_APP
                 listItems[i].Title = Product[i].title;
                 listItems[i].Button = Product[i].link;
                 listItems[i].Price = Product[i].price;
-             //   listItems[i].Icon = Image.FromFile($@"{image_path}" + Product[i].image_name + ".jpg");
+                listItems[i].Icon = Image.FromFile($@"{image_path}" + Product[i].image_name + ".jpg");
 
                 // dodawnie do flow layout panelu 
                 if (home_panel.Controls.Count < 0)
@@ -162,7 +161,7 @@ namespace Skapiec_APP
                 listItems[i] = new HistoryItem();
 
                 listItems[i].Title = History[i].search_query;
-              //  listItems[i].Icon = Image.FromFile($@"{image_path}" + History[i].image_name + ".jpg");
+                listItems[i].Icon = Image.FromFile($@"{image_path}" + History[i].image_name + ".jpg");
 
 
 
@@ -177,18 +176,6 @@ namespace Skapiec_APP
         }
 
 
-        //podglądowe okienko list box do wyrzucenia jak wszystko będzie śmigać
-        private void test_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void WireUpSearchList()
-        {
-            test.DataSource = null;
-            test.DataSource = Run;
-            test.DisplayMember = "search_text";
-        }
-        //----------
 
         private void search_text_TextChanged(object sender, EventArgs e)
         {

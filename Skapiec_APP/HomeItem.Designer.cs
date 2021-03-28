@@ -38,21 +38,20 @@
             // 
             // home_picture
             // 
-            this.home_picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.home_picture.Location = new System.Drawing.Point(63, 18);
-            this.home_picture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.home_picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.home_picture.Location = new System.Drawing.Point(47, 15);
             this.home_picture.Name = "home_picture";
-            this.home_picture.Size = new System.Drawing.Size(187, 260);
+            this.home_picture.Size = new System.Drawing.Size(140, 211);
+            this.home_picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.home_picture.TabIndex = 1;
             this.home_picture.TabStop = false;
             // 
             // home_title_label
             // 
             this.home_title_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.home_title_label.Location = new System.Drawing.Point(4, 320);
-            this.home_title_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.home_title_label.Location = new System.Drawing.Point(3, 260);
             this.home_title_label.Name = "home_title_label";
-            this.home_title_label.Size = new System.Drawing.Size(305, 58);
+            this.home_title_label.Size = new System.Drawing.Size(229, 47);
             this.home_title_label.TabIndex = 2;
             this.home_title_label.Text = "Title";
             this.home_title_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -60,10 +59,9 @@
             // price_label
             // 
             this.price_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.price_label.Location = new System.Drawing.Point(4, 398);
-            this.price_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.price_label.Location = new System.Drawing.Point(3, 323);
             this.price_label.Name = "price_label";
-            this.price_label.Size = new System.Drawing.Size(305, 58);
+            this.price_label.Size = new System.Drawing.Size(229, 47);
             this.price_label.TabIndex = 3;
             this.price_label.Text = "Price";
             this.price_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -71,18 +69,16 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Location = new System.Drawing.Point(4, 388);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(3, 315);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(305, 1);
+            this.panel1.Size = new System.Drawing.Size(229, 1);
             this.panel1.TabIndex = 4;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(89, 286);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(67, 232);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 28);
+            this.button1.Size = new System.Drawing.Size(107, 23);
             this.button1.TabIndex = 5;
             this.button1.Text = "IDZ DO SKLEPU";
             this.button1.UseVisualStyleBackColor = true;
@@ -90,7 +86,7 @@
             // 
             // HomeItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.button1);
@@ -98,9 +94,9 @@
             this.Controls.Add(this.price_label);
             this.Controls.Add(this.home_title_label);
             this.Controls.Add(this.home_picture);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "HomeItem";
-            this.Size = new System.Drawing.Size(313, 457);
+            this.Size = new System.Drawing.Size(235, 371);
             ((System.ComponentModel.ISupportInitialize)(this.home_picture)).EndInit();
             this.ResumeLayout(false);
 
