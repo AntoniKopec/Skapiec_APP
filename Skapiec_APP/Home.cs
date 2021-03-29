@@ -74,7 +74,7 @@ namespace Skapiec_APP
                     var title = HttpUtility.HtmlDecode(article.SelectSingleNode(".//h2[@class = 'title gtm_red_solink']").InnerText);
                     var price = HttpUtility.HtmlDecode(article.SelectSingleNode(".//strong[@class = 'price gtm_sor_price']").InnerText);
                     var link = HttpUtility.HtmlDecode(article.SelectSingleNode(".//a[@class = 'btn l direct-link-1 gtm_sor_button']").GetAttributeValue("href", string.Empty).ToString());
-                    var image = HttpUtility.HtmlDecode(article.SelectSingleNode(".//img").Attributes["src"].Value.ToString());
+                    var image = HttpUtility.HtmlDecode(article.SelectSingleNode(".//source[@type = 'image/jpeg']").Attributes["srcset"].Value.ToString());
                     var fixedLink = link.Replace("/", "");
 
                     using (WebClient client = new WebClient())
